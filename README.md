@@ -1,2 +1,3 @@
 # Summit_UI-Library
-A GUI library for menus on roblox.
+A GUI Library For Roblox
+see documentation
