@@ -1,10 +1,3 @@
--- Gui to Lua
--- Version: 3.2
---[[
-	TODO: make example code 
-]]
-
--- Instances:
 local SummitUI
 local SideBar
 local UIPadding
@@ -30,8 +23,6 @@ local summitLib = {
 		Tabs = {}
 	}
 }
-
-
 
 function summitLib:CreateWindow(ConfigArgs)
 	local defaultFont = Font.new("rbxasset://fonts/families/TitilliumWeb.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
