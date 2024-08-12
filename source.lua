@@ -151,7 +151,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	--Properties:
 
 	SummitUI.Name = "SummitUI"
-	SummitUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	SummitUI.Parent = game:GetService("COREGUI")
 	SummitUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	SideBar.Name = "SideBar"
