@@ -277,7 +277,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	GUITitle.BorderSizePixel = 0
 	GUITitle.Position = UDim2.new(0,45, 7.62939464e-07, 0)
 	GUITitle.Size = UDim2.new(0, 463, 0, 39)
-	GUITitle.Font = Enum.Font.SourceSansBold
+	GUITitle.FontFace = defaultFont
 	GUITitle.Text = ConfigArgs.Name
 	GUITitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	GUITitle.TextSize = 24.000
@@ -354,7 +354,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	TemporaryText.BorderSizePixel = 0
 	TemporaryText.Position = UDim2.new(0.0111111114, 0, 0.00055286038, 0)
 	TemporaryText.Size = UDim2.new(0, 444, 0, 31)
-	TemporaryText.Font = Enum.Font.SourceSansBold
+	TemporaryText.FontFace = defaultFont
 	TemporaryText.Text = `<b>{ConfigArgs.Name}</b> x <b>Summit UI Library v1.4 </b>`
 	TemporaryText.TextColor3 = Color3.fromRGB(150, 150, 150)
 	TemporaryText.TextSize = 15
