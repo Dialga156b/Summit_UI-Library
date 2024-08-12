@@ -845,7 +845,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				isDragging = true
 			end)
 
-			ImageButton.MouseButton1Up:Connect(function()
+			game:GetService("UserInputService").InputEnded:Connect(function()
 				isDragging = false
 				SliderFrame.Size = UDim2.new(sliderPercentage, 0, 1, 0)
 			end)
@@ -1690,13 +1690,13 @@ function summitLib:CreateWindow(ConfigArgs)
 				addConnection(HSIButton.MouseButton1Down,function() 
 					pickingColor = true
 				end)
-				addConnection(HSIButton.MouseButton1Up,function() 
+				addConnection(game:GetService("UserInputService").InputEnded,function() 
 					pickingColor = false
 				end)
 				addConnection(ValueButton.MouseButton1Down,function() 
 					pickingValue = true
 				end)
-				addConnection(ValueButton.MouseButton1Up,function() 
+				addConnection(game:GetService("UserInputService").InputEnded,function() 
 					pickingValue = false
 				end)
 				local currentHue = 0
