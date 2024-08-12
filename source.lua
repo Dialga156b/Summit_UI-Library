@@ -1192,7 +1192,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				UIListLayout.Padding = UDim.new(0, 7)
 
 				SideBar.ClipsDescendants = true
-				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu,TweenInfo.new(.4,Enum.EasingStyle.Cubic,Enum.EasingDirection.Out),{Position = UDim2.new(-0.0440528616, 0, -0.0032258064, 0)})
+				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu,TweenInfo.new(.4,Enum.EasingStyle.Cubic,Enum.EasingDirection.Out),{Position = UDim2.new(0, 0, -0.0032258064, 0)})
 				introTween:Play()
 
 				local isPlayerSelected = false
@@ -1396,7 +1396,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				UIListLayout.Padding = UDim.new(0, 7)
 
 				SideBar.ClipsDescendants = true
-				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu, TweenInfo.new(.4, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {Position = UDim2.new(-0.0440528616, 0, -0.0032258064, 0)})
+				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu, TweenInfo.new(.4, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, -0.0032258064, 0)})
 				introTween:Play()
 
 				local isItemSelected = false
@@ -1680,7 +1680,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				assignClickAnimation(Continue,false)
 
 
-				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu, TweenInfo.new(.4, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {Position = UDim2.new(-0.0440528616, 0, -0.0032258064, 0)})
+				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu, TweenInfo.new(.4, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, -0.0032258064, 0)})
 				introTween:Play()
 
 				local isColorSelected = false
