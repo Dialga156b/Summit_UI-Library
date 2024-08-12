@@ -233,7 +233,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	TabTitle.BorderSizePixel = 0
 	TabTitle.Position = UDim2.new(0.0111111114, 0, 0.00055286038, 0)
 	TabTitle.Size = UDim2.new(0, 444, 0, 31)
-	TabTitle.Font = defaultFont
+	TabTitle.FontFace = defaultFont
 	TabTitle.Text = "Select A Tab"
 	TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TabTitle.TextSize = 22.000
