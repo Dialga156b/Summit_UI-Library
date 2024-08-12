@@ -151,7 +151,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	--Properties:
 
 	SummitUI.Name = "SummitUI"
-	SummitUI.Parent = game:GetService("COREGUI")
+	SummitUI.Parent = game:GetService("CoreGui")
 	SummitUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	SideBar.Name = "SideBar"
