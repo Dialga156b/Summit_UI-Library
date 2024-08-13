@@ -534,7 +534,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				GUITitle.Text = ConfigArgs.Name
 				for i = #GUITitle.Text, 0, -1 do
 					GUITitle.Text = string.sub(GUITitle.Text,0,i)
-					task.wait()
+					task.wait(.02)
 				end
 				GUITitle.Text = "U"
 				task.wait()
@@ -571,7 +571,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				local text = ConfigArgs.Name
 				for i = 1, #text do
 					GUITitle.Text = string.sub(text, 1, i)
-					task.wait()
+					task.wait(.02)
 				end
 			end)()
 			game:GetService("TweenService"):Create(SideBar,TweenInfo.new(.6,Enum.EasingStyle.Cubic,Enum.EasingDirection.InOut),{Size = UDim2.new(0, 237, 0, 310)}):Play()
@@ -1021,13 +1021,13 @@ function summitLib:CreateWindow(ConfigArgs)
 				enabled = not enabled
 				args.Callback(enabled)
 				if enabled == true then
-					for i=0,1,.1 do
+					for i=0,1,.05 do
 						UIStroke.Thickness = 2.8 - (2.8 * i)
 						tapIcon.BackgroundTransparency = 1 - i
 						task.wait()
 					end
 				else
-					for i=0,1,.1 do
+					for i=0,1,.05 do
 						UIStroke.Thickness = (2.8 * i)
 						tapIcon.BackgroundTransparency = i
 						task.wait()
@@ -1038,13 +1038,13 @@ function summitLib:CreateWindow(ConfigArgs)
 			function toggle:Set(Enabled: BoolValue)
 				args.Callback(Enabled)
 				if Enabled == true then
-					for i=0,1,.1 do
+					for i=0,1,.05 do
 						UIStroke.Thickness = 2.8 - (2.8 * i)
 						tapIcon.BackgroundTransparency = 1 - i
 						task.wait()
 					end
 				else
-					for i=0,1,.1 do
+					for i=0,1,.05 do
 						UIStroke.Thickness = (2.8 * i)
 						tapIcon.BackgroundTransparency = i
 						task.wait()
