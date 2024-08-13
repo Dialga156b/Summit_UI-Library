@@ -444,6 +444,7 @@ function summitLib:CreateWindow(ConfigArgs)
 		Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Notification.BorderSizePixel = 0
 		Notification.BackgroundTransparency = 0.15
+		Notification.AutomaticSize = Enum.AutomaticSize.Y
 		Notification.ClipsDescendants = true
 		Notification.Position = UDim2.new(0.934865892, 0, 0.991055429, 0)
 		Notification.Size = UDim2.new(0.87356323, 0, 0, 0) -- Start with height 0 for animation
