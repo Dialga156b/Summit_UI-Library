@@ -464,6 +464,7 @@ function summitLib:CreateWindow(ConfigArgs)
 		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Title.TextSize = 25.000
 		Title.TextXAlignment = Enum.TextXAlignment.Left
+		Title.AutomaticSize = Enum.AutomaticSize.XY
 
 		BodyText.Name = "BodyText"
 		BodyText.Parent = Notification
