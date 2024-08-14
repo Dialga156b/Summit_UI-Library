@@ -139,6 +139,15 @@ Tab4:CreateBind({
 })
 ```
 
+## Creating a Notification
+```lua
+window:CreateNotification({
+	Title = "Example Notification", -- string
+	Description = "This is a Notification!", --string
+	Duration = 5 -- number
+})
+```
+
 ## FULL Working Example Code
 ```lua
 local summitLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Dialga156b/Summit_UI-Library/main/source.lua')))()
