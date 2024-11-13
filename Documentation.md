@@ -1,5 +1,5 @@
 # Summit UI Library Documentation
-### Version: 1.2
+### Version: 1.2.1
 
 
 ## Refrencing the Library
@@ -198,4 +198,4 @@ end})
 ```
 
 ## More coming soon!
-### Have a suggestion? Either create an issue and let me know what, or ping me on Discord at Eaqualoti!
+### Have a suggestion? Either create an issue and let me know what, or ping me on Discord @Eaqualoti.
