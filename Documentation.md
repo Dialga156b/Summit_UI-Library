@@ -78,7 +78,7 @@ Tab1:CreateToggle({
 ```
 
 ## Setting a Toggle
-```
+```lua
 YourToggle:Set(true) -- or what you want to set the slider to <boolean>
 ```
 
