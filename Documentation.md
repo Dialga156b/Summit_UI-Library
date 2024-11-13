@@ -195,8 +195,6 @@ end})
 Tab4:CreateBind({Text = "Hold Keybind",Hold = true,Default = Enum.KeyCode.E,CallBack = function(isHolding)
 	print('Holding: ',isHolding) -- fires when the keybind is press and unpressed, with isHolding being what state it's in.
 end})
-
-return sum
 ```
 
 ## More coming soon!
