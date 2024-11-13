@@ -53,8 +53,7 @@ Tab1:CreateSlider({
 
 ## Setting a Slider's Value
 ```lua
-local slider = Tab1:CreateSlider(args) -- arguments
-slider:Set(50) -- or whatever you want to set the slider's value to. | <number>
+YourSlider:Set(50) -- or whatever you want to set the slider's value to. | <number>
 ```
 
 ## Creating a Button
@@ -79,9 +78,8 @@ Tab1:CreateToggle({
 ```
 
 ## Setting a Toggle
-```lua
-local toggle = Tab1:CreateToggle(args) -- toggle button creation arguments
-toggle:Set(true) -- or what you want to set the slider to <boolean>
+```
+YourToggle:Set(true) -- or what you want to set the slider to <boolean>
 ```
 
 ## Creating a Player Selector
