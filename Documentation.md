@@ -42,6 +42,7 @@ Tab1:CreateParagraph("This is a default Paragraph Element. the text isn't bolded
 ## Creating a Slider
 ```lua
 Tab1:CreateSlider({
+  Text = "This is a default Slider Element."
   Default = 250, -- Default Value for the slider when created <number>
   Minimum = 16, -- Minimum Value <number>
   Maximum = 500, -- Maximum Value <number>
@@ -160,7 +161,7 @@ Tab1:CreateParagraph("This is a default Paragraph Element. the text isn't bolded
 
 local SliderValue = 16
 
-Tab2:CreateSlider({Default = 250, Minimum = 16, Maximum = 500, Callback = function(Value)
+Tab2:CreateSlider({Text = "This is a default Slider Element.", Default = 250, Minimum = 16, Maximum = 500, Callback = function(Value)
 	print(Value) -- returns a whole number
 	SliderValue = Value
 end})
