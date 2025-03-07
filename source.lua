@@ -1,3 +1,5 @@
+
+-- Instances:
 local SummitUI
 local SideBar
 local UIPadding
@@ -23,6 +25,8 @@ local summitLib = {
 		Tabs = {}
 	}
 }
+
+
 
 function summitLib:CreateWindow(ConfigArgs)
 	local defaultFont = Font.new("rbxasset://fonts/families/TitilliumWeb.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -92,6 +96,7 @@ function summitLib:CreateWindow(ConfigArgs)
 			tween.Completed:Connect(function()
 				frame:Destroy()
 			end)
+			sound:Destroy()
 		end)
 	end
 
@@ -151,7 +156,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	--Properties:
 
 	SummitUI.Name = "SummitUI"
-	SummitUI.Parent = game:GetService("CoreGui")
+	SummitUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	SummitUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	SideBar.Name = "SideBar"
@@ -233,7 +238,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	TabTitle.BorderSizePixel = 0
 	TabTitle.Position = UDim2.new(0.0111111114, 0, 0.00055286038, 0)
 	TabTitle.Size = UDim2.new(0, 444, 0, 31)
-	TabTitle.FontFace = defaultFont
+	TabTitle.Font = Enum.Font.SourceSansBold
 	TabTitle.Text = "Select A Tab"
 	TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TabTitle.TextSize = 22.000
@@ -277,7 +282,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	GUITitle.BorderSizePixel = 0
 	GUITitle.Position = UDim2.new(0,45, 7.62939464e-07, 0)
 	GUITitle.Size = UDim2.new(0, 463, 0, 39)
-	GUITitle.FontFace = defaultFont
+	GUITitle.Font = Enum.Font.SourceSansBold
 	GUITitle.Text = ConfigArgs.Name
 	GUITitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	GUITitle.TextSize = 24.000
@@ -354,7 +359,7 @@ function summitLib:CreateWindow(ConfigArgs)
 	TemporaryText.BorderSizePixel = 0
 	TemporaryText.Position = UDim2.new(0.0111111114, 0, 0.00055286038, 0)
 	TemporaryText.Size = UDim2.new(0, 444, 0, 31)
-	TemporaryText.FontFace = defaultFont
+	TemporaryText.Font = Enum.Font.SourceSansBold
 	TemporaryText.Text = `<b>{ConfigArgs.Name}</b> x <b>Summit UI Library v1.4 </b>`
 	TemporaryText.TextColor3 = Color3.fromRGB(150, 150, 150)
 	TemporaryText.TextSize = 15
@@ -444,7 +449,6 @@ function summitLib:CreateWindow(ConfigArgs)
 		Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Notification.BorderSizePixel = 0
 		Notification.BackgroundTransparency = 0.15
-		Notification.AutomaticSize = Enum.AutomaticSize.Y
 		Notification.ClipsDescendants = true
 		Notification.Position = UDim2.new(0.934865892, 0, 0.991055429, 0)
 		Notification.Size = UDim2.new(0.87356323, 0, 0, 0) -- Start with height 0 for animation
@@ -464,7 +468,6 @@ function summitLib:CreateWindow(ConfigArgs)
 		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Title.TextSize = 25.000
 		Title.TextXAlignment = Enum.TextXAlignment.Left
-		Title.AutomaticSize = Enum.AutomaticSize.XY
 
 		BodyText.Name = "BodyText"
 		BodyText.Parent = Notification
@@ -534,7 +537,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				GUITitle.Text = ConfigArgs.Name
 				for i = #GUITitle.Text, 0, -1 do
 					GUITitle.Text = string.sub(GUITitle.Text,0,i)
-					task.wait(.02)
+					task.wait()
 				end
 				GUITitle.Text = "U"
 				task.wait()
@@ -571,7 +574,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				local text = ConfigArgs.Name
 				for i = 1, #text do
 					GUITitle.Text = string.sub(text, 1, i)
-					task.wait(.02)
+					task.wait()
 				end
 			end)()
 			game:GetService("TweenService"):Create(SideBar,TweenInfo.new(.6,Enum.EasingStyle.Cubic,Enum.EasingDirection.InOut),{Size = UDim2.new(0, 237, 0, 310)}):Play()
@@ -717,12 +720,15 @@ function summitLib:CreateWindow(ConfigArgs)
 		function thisTab:CreateSlider(args)
 			local Minimum = args.Minimum
 			local Maximum = args.Maximum
+			local Text = args.Text
 			local Default = args.Default
 			local Callback = args.Callback or function() end
 			table.insert(self.Contents.Objects, {
 				ObjectType = 'Slider',
+				
 				sliderMinimum = Minimum,
 				sliderMaximum = Maximum,
+				Text = Text,
 				sliderDefault = Default,
 				sliderCallback = Callback
 			})
@@ -761,7 +767,7 @@ function summitLib:CreateWindow(ConfigArgs)
 			SliderText.Position = UDim2.new(0.0141843967, 0, 0, 0)
 			SliderText.Size = UDim2.new(0, 417, 0, 22)
 			SliderText.FontFace = Font.new('rbxasset://fonts/families/TitilliumWeb.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-			SliderText.Text = "This is a default Slider Element."
+			SliderText.Text = Text
 			SliderText.TextColor3 = Color3.fromRGB(193, 193, 193)
 			SliderText.TextSize = 21
 			SliderText.TextWrapped = true
@@ -819,7 +825,7 @@ function summitLib:CreateWindow(ConfigArgs)
 			MaximumText.Position = UDim2.new(0.49881798, 0, 0.347826093, 0)
 			MaximumText.Size = UDim2.new(0, 205, 0, 7)
 			MaximumText.FontFace = Font.new('rbxasset://fonts/families/TitilliumWeb.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-			MaximumText.Text = "500"
+			MaximumText.Text = Maximum
 			MaximumText.TextColor3 = Color3.fromRGB(150, 150, 150)
 			MaximumText.TextSize = 17.000
 			MaximumText.TextXAlignment = Enum.TextXAlignment.Right
@@ -833,7 +839,7 @@ function summitLib:CreateWindow(ConfigArgs)
 			MinimumText.Position = UDim2.new(0.0141843967, 0, 0.347826093, 0)
 			MinimumText.Size = UDim2.new(0, 156, 0, 7)
 			MinimumText.FontFace = Font.new('rbxasset://fonts/families/TitilliumWeb.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-			MinimumText.Text = "16"
+			MinimumText.Text = Minimum
 			MinimumText.TextColor3 = Color3.fromRGB(150, 150, 150)
 			MinimumText.TextSize = 17
 			MinimumText.TextXAlignment = Enum.TextXAlignment.Left
@@ -847,7 +853,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				isDragging = true
 			end)
 
-			game:GetService("UserInputService").InputEnded:Connect(function()
+			ImageButton.MouseButton1Up:Connect(function()
 				isDragging = false
 				SliderFrame.Size = UDim2.new(sliderPercentage, 0, 1, 0)
 			end)
@@ -858,8 +864,8 @@ function summitLib:CreateWindow(ConfigArgs)
 					sliderPercentage = math.clamp(posOnSlider, 0, 1)
 					SliderFrame.Size = SliderFrame.Size:Lerp(UDim2.new(sliderPercentage, 0, 1, 0), .3)
 
-					local minValue = tonumber(MinimumText.Text)
-					local maxValue = tonumber(MaximumText.Text)
+					local minValue = Minimum
+					local maxValue = Maximum
 					local range = maxValue - minValue
 					local sliderValue = math.floor((sliderPercentage * range) + minValue)
 
@@ -1021,13 +1027,13 @@ function summitLib:CreateWindow(ConfigArgs)
 				enabled = not enabled
 				args.Callback(enabled)
 				if enabled == true then
-					for i=0,1,.05 do
+					for i=0,1,.1 do
 						UIStroke.Thickness = 2.8 - (2.8 * i)
 						tapIcon.BackgroundTransparency = 1 - i
 						task.wait()
 					end
 				else
-					for i=0,1,.05 do
+					for i=0,1,.1 do
 						UIStroke.Thickness = (2.8 * i)
 						tapIcon.BackgroundTransparency = i
 						task.wait()
@@ -1038,13 +1044,13 @@ function summitLib:CreateWindow(ConfigArgs)
 			function toggle:Set(Enabled: BoolValue)
 				args.Callback(Enabled)
 				if Enabled == true then
-					for i=0,1,.05 do
+					for i=0,1,.1 do
 						UIStroke.Thickness = 2.8 - (2.8 * i)
 						tapIcon.BackgroundTransparency = 1 - i
 						task.wait()
 					end
 				else
-					for i=0,1,.05 do
+					for i=0,1,.1 do
 						UIStroke.Thickness = (2.8 * i)
 						tapIcon.BackgroundTransparency = i
 						task.wait()
@@ -1194,7 +1200,7 @@ function summitLib:CreateWindow(ConfigArgs)
 				UIListLayout.Padding = UDim.new(0, 7)
 
 				SideBar.ClipsDescendants = true
-				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu,TweenInfo.new(.4,Enum.EasingStyle.Cubic,Enum.EasingDirection.Out),{Position = UDim2.new(0, 0, -0.0032258064, 0)})
+				local introTween = game:GetService("TweenService"):Create(PlayerDropdownMenu,TweenInfo.new(.4,Enum.EasingStyle.Cubic,Enum.EasingDirection.Out),{Position = UDim2.new(0, 0, 0, 0)})
 				introTween:Play()
 
 				local isPlayerSelected = false
@@ -1692,13 +1698,13 @@ function summitLib:CreateWindow(ConfigArgs)
 				addConnection(HSIButton.MouseButton1Down,function() 
 					pickingColor = true
 				end)
-				addConnection(game:GetService("UserInputService").InputEnded,function() 
+				addConnection(HSIButton.MouseButton1Up,function() 
 					pickingColor = false
 				end)
 				addConnection(ValueButton.MouseButton1Down,function() 
 					pickingValue = true
 				end)
-				addConnection(game:GetService("UserInputService").InputEnded,function() 
+				addConnection(ValueButton.MouseButton1Up,function() 
 					pickingValue = false
 				end)
 				local currentHue = 0
@@ -1974,4 +1980,3 @@ function summitLib:CreateWindow(ConfigArgs)
 end
 
 return summitLib
-
