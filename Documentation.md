@@ -2,7 +2,7 @@
 ### Version: 1.2.1
 
 
-## Refrencing the Library
+## Referencing the Library
 ```lua
 local summitLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Dialga156b/Summit_UI-Library/main/source.lua')))()
 ```
